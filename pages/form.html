@@ -1,0 +1,53 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    <h3>Select a Flight:</h3>
+
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Flight</th>
+                <th>Origin</th>
+                <th>Destination</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for flight in schedule %}
+            <tr>
+                <td>{{ flight.number }}</td>
+                <td>{{ flight.origin }}</td>
+                <td>{{ flight.destination }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+
+    </table>
+
+    <form method="post" action="summary">
+        <p><input type="text" name="fullname" placeholder="First Last">Enter full name</p>
+        <p><input type="text" name="flightnumber" placeholder="Flight Number">Enter Flight Number</p>
+        Select a Seating Preference:
+        <select name="seating">
+            <option value="Coach">Coach</option>
+            <option value="Business Class">Business Class</option>
+            <option value="First Class">First Class</option>
+        </select>
+        <p>Select a Meal</p>
+        <div>
+            <input type="radio" id="beef" name="meal" value="Beef" checked>Beef
+        </div>
+        <div>
+            <input type="radio" id="chicken" name="meal" value="Chicken">Chicken
+        </div>
+        <div>
+            <input type="radio" id="vegan" name="meal" value="Vegan">Vegan
+        </div>
+        <p><button type="submit">Submit</button></p>
+    </form>
+</div>
+
+
+{% endblock %}

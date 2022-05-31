@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    <h3>Thank you for using Sun or Fun Airlines.</h3>
+
+    <p>Flight Summary:</p>
+
+    <ul>
+        <li>Name: {{name}}</li>
+        <li>Flight Number: {{flight}}</li>
+        <li>Seating Preference: {{seating}}</li>
+        <li>Meal: {{meal}}</li>
+    </ul>
+</div>
+
+{% endblock %}
